@@ -15,6 +15,20 @@
 
     <div class="form-group">
       <%= form_for(Message.new) do |f| %>
+      
+          <% if @message.errors.present? %>
+            <div class="alert alert-danger">
+              <%= alert %>
+              <ul>
+                <% @message.errors.full_messages.each do |full_message| %>
+                  <li>
+                    <%= full_message %>
+                  </li>
+                <% end %> 
+              </ul>
+            </div>
+          <% end %>
+      
           <div class="user-def1">
               <label for="name">名前:</label>
               <div>
