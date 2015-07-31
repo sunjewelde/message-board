@@ -6,6 +6,11 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
   
+  def destroy
+    @message.destroy
+    redirect_to root_path, notice: 'メッセージを削除しました'
+  end
+  
   def edit
   end
   
@@ -18,11 +23,7 @@ class MessagesController < ApplicationController
       render 'edit'
     end
   end
-  
-  def destroy
-    @message.destroy
-    redirect_to root_path, notice: 'メッセージを削除しました'
-  end
+
   
   ## ここから追記
   def create
