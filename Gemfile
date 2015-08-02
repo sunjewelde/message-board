@@ -56,6 +56,7 @@ gem 'execjs'
 gem 'twitter-bootstrap-rails'
 # --------------------------------------------------------------
 
+gem 'pry-byebug', group: :development
 
 end
 
